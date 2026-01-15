@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gray-300: rgb(229, 231, 235);
+  --color-gray-500: rgb(51, 65, 85);
+  --color-black-600: #010203;
+}
