@@ -3,11 +3,13 @@ import { PlusIcon } from "./components/icons/PlusIcon"
 import { ShareIcon } from "./components/icons/Shareicon"
 import { Card } from "./components/ui/Card"
 import { Sidebar } from "./components/ui/Sidebar"
+import { CreateContentModal } from "./components/ui/CreateContentModal"
 
 function App () {
-  return <div className="m-1">
-    
-      <div className="flex justify-end gap-2">
+
+  return <div className="">
+            <CreateContentModal />
+      <div className="flex justify-end gap-2 m-1">
         <Button startIcon={<PlusIcon size="md" />} varient="primary" size="sm" text="Add Content"/>
         <Button startIcon={<ShareIcon size="md" />} varient="secondary" size="sm" text="Add Content"/>
       </div>
