@@ -8,7 +8,7 @@ import { CreateContentModal } from "./components/ui/CreateContentModal"
 function App () {
 
   return <div className="">
-            <CreateContentModal />
+            { /*<CreateContentModal /> */}
       <div className="flex justify-end gap-2 m-1">
         <Button startIcon={<PlusIcon size="md" />} varient="primary" size="sm" text="Add Content"/>
         <Button startIcon={<ShareIcon size="md" />} varient="secondary" size="sm" text="Add Content"/>
