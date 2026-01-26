@@ -25,8 +25,8 @@ const SizeStyles: Record<Size, string> = {
     "lg": "py-3 px-6"
 }
 
-export const Button = (props: ButtonProps) => {
-    return <button className={
+export const Button = (props: ButtonProps,) => {
+    return <button onClick={props.onClick} className={
         `${VarientStyles[props.varient]}
          ${SizeStyles[props.size]}
          ${DefaultStyles}` 
