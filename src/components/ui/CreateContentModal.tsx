@@ -1,6 +1,6 @@
-import { useState } from "react"
 import { CrossButton } from "../icons/CrossButton"
 import { Button } from "./Button"
+import { Input } from "./Input"
 
 export function CreateContentModal ({open, onClose}) {
     
@@ -13,9 +13,9 @@ export function CreateContentModal ({open, onClose}) {
                             <div onClick={onClose}><CrossButton /></div>
                             </div>
                         <div className="flex flex-col gap-1">
-                        <Input/>
-                        <Input/>
-                        <Input/>
+                        <Input placeholder="title"/>
+                        <Input placeholder="type"/>
+                        <Input placeholder="link type"/>
                         <Button varient="secondary" size="md" text="Submit"/>
                         </div>
                     </span>
@@ -24,6 +24,3 @@ export function CreateContentModal ({open, onClose}) {
         </div>
 }
 
-function Input() {
-    return <input type="text" placeholder="placeholder" className=" px-4 py-2 rounded-xl w-full border border-slate-300 " />
-}

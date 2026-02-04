@@ -10,6 +10,8 @@ interface ButtonProps {
     startIcon?: ReactElement;
     endIcon?: ReactElement;
     onClick?: () => void;
+    FullW?: boolean;
+    Loading?: boolean;
 }
 
 const VarientStyles: Record<Varient, string> = {
@@ -17,7 +19,7 @@ const VarientStyles: Record<Varient, string> = {
     "secondary": "bg-black-600 text-white"
 }
 
-const DefaultStyles = "rounded-xl flex items-center"
+const DefaultStyles = "rounded-xl flex items-center cursor-pointer"
 
 const SizeStyles: Record<Size, string> = {
     "sm" : "py-1 px-2",
@@ -26,13 +28,14 @@ const SizeStyles: Record<Size, string> = {
 }
 
 export const Button = (props: ButtonProps,) => {
-    return <button onClick={props.onClick} className={
+    return <button onClick={props.onClick} 
+    className={
         `${VarientStyles[props.varient]}
          ${SizeStyles[props.size]}
-         ${DefaultStyles}` 
+         ${DefaultStyles} 
+         ${props.FullW ? "w-full" : ""} 
+         ${props.Loading ? "opacity-40 disabled cursor-not-allowed" : ""}` 
     }>
         {props.startIcon? <div className="pr-2">{props.startIcon}</div> : null} {props.text}
     </button>
 }
-
-{/* <Button varient="primary" size="md" onClick={() => {}} text="Button" /> */}
