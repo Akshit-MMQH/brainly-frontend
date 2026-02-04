@@ -19,7 +19,7 @@ const VarientStyles: Record<Varient, string> = {
     "secondary": "bg-black-600 text-white"
 }
 
-const DefaultStyles = "rounded-xl flex items-center cursor-pointer"
+const DefaultStyles = "rounded-xl flex items-center justify-center cursor-pointer"
 
 const SizeStyles: Record<Size, string> = {
     "sm" : "py-1 px-2",

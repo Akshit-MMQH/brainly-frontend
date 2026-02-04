@@ -5,11 +5,11 @@ import { ShareIcon } from "../icons/Shareicon";
 interface CardProps {
     title: String,
     link: String,
-    typeLink: "youtube" | "twitter" | "notion",
+    type: "youtube" | "twitter" | "notion",
 
 }
 
-export const Card = ({title, link, typeLink}: CardProps) => {
+export const Card = ({title, link, type}: CardProps) => {
 
     return <div className="flex flex-cols m-3">
                 <div className="border border-slate-300 shadow-lg rounded-xl">
@@ -28,18 +28,18 @@ export const Card = ({title, link, typeLink}: CardProps) => {
                 <div className=" h-72 max-w-72 p-2 rounded-bl-xl rounded-br-xl">
                     <div>
 
-                        {typeLink === "youtube" && <iframe className="w-full rounded-xl" 
+                        {type === "youtube" && <iframe className="w-full rounded-xl" 
                         src={link.replace("https://youtu.be/", "https://www.youtube.com/embed/")} 
                         title="YouTube video player" frameBorder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                         referrerPolicy="strict-origin-when-cross-origin" 
                         allowFullScreen></iframe>
                         }
-                        {typeLink === "twitter" && <blockquote className="twitter-tweet">
+                        {type === "twitter" && <blockquote className="twitter-tweet">
                         <a href={link.replace("x.com", "twitter.com").replace("?s=20", "?ref_src=twsrc%5Etfw")}></a> 
                         </blockquote> 
                         }
-                        {typeLink === "notion" && <iframe src={link as string} width="100%" height=""></iframe>}
+                        {type === "notion" && <iframe src={link as string} width="100%" height=""></iframe>}
                         
                         </div>
                     </div>

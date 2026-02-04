@@ -5,9 +5,11 @@ import { Card } from "../components/ui/Card"
 import { Sidebar } from "../components/ui/Sidebar"
 import { CreateContentModal } from "../components/ui/CreateContentModal"
 import { useState } from "react"
+import { useContent } from "../hooks/useContent"
 
 export function Dashboard () {
   const [modalOpen, setModalOpen] = useState(false);
+  const contents = useContent();
 
   return <div className=" ml-72">
         <Sidebar />
@@ -19,10 +21,9 @@ export function Dashboard () {
         <Button startIcon={<ShareIcon size="md" />} varient="secondary" size="sm" text="Share Content"/>
       </div>
       <div className="flex">
-        <Card title="youtube" link="https://youtu.be/8eeDuiaq7eU?si=BqvJCE6dB2E9FmRr" typeLink="youtube"/>
-        <Card title="twitter" link="https://x.com/cneuralnetwork/status/2015436494660567144?s=20" typeLink="youtube"/>
-        <Card title="notion" link="https://www.notion.so/Weird-Roadmap-2ca99633f9ee800aa399c5051f38b621?source=copy_link" typeLink="notion" />
-        
+        <Card title="youtube" link="https://youtu.be/8eeDuiaq7eU?si=BqvJCE6dB2E9FmRr" type="youtube"/>
+        {contents.map(({type, link, title}) => <Card type={type} link={link} title={title} />)}
+
     </div>
   </div>   
 }

@@ -4,6 +4,6 @@
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" },
   ],
-  "include": ["src", "src/**/*.d.ts"]
+  "include": ["src", "src/**/*.d.ts", "config.ts"]
 
 }
