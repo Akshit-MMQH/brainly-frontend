@@ -5,13 +5,13 @@ import { Input } from "./Input"
 import { BACKEND_URL } from "../../../config";
 import axios from "axios";
 
-enum ContentType {
-        Youtube = "youtube",
-        Twitter = "twitter",
-        Notion = "notion"
+const ContentType = {
+    Youtube: "youtube",
+    Twitter: "twitter",
+    Notion: "notion"
 }
 
-export function CreateContentModal ({open, onClose}) {
+export function CreateContentModal ({open, onClose}: {open:any; onClose:any;}) {
     const titleRef = useRef<HTMLInputElement>(null);
     const linkRef = useRef<HTMLInputElement>(null);
     const [type, setType] = useState(ContentType.Youtube);
@@ -26,7 +26,7 @@ export function CreateContentModal ({open, onClose}) {
             type
         }, {
             headers: {
-                "Authorization": localStorage.getItem("token")
+                "token": localStorage.getItem("token")
             }
         })
         onClose();
@@ -44,7 +44,7 @@ export function CreateContentModal ({open, onClose}) {
                         <div className="flex flex-col gap-1">
                         <Input reference={titleRef} placeholder="title"/>
                         
-                        <Input reference={linkRef} placeholder="link type"/>
+                        <Input reference={linkRef} placeholder="link"/>
                         <div className="flex">
                             <Button size="md" text="youtube" varient={type === ContentType.Youtube ? "secondary" : "primary"} onClick={()=> {
                             setType(ContentType.Youtube)

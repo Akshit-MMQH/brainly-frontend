@@ -13,7 +13,7 @@ export const Card = ({title, link, type}: CardProps) => {
 
     return <div className="flex flex-cols m-3">
                 <div className="border border-slate-300 shadow-lg rounded-xl">
-                    <div className="flex max-w-72 justify-between p-2 rounded-tl-xl rounded-tr-xl">
+                    <div className="flex max-w-64 justify-between p-2 rounded-tl-xl rounded-tr-xl">
                         <div className="flex items-center">
                             <div className="pr-2 text-slate-500"><ArchiveBox size="md" /></div>
                         </div>
@@ -25,7 +25,7 @@ export const Card = ({title, link, type}: CardProps) => {
                     </div>
                 
                 
-                <div className=" h-72 max-w-72 p-2 rounded-bl-xl rounded-br-xl">
+                <div className=" h-64 max-w-64 p-2 rounded-bl-xl rounded-br-xl">
                     <div>
 
                         {type === "youtube" && <iframe className="w-full rounded-xl" 
